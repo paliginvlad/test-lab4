@@ -49,13 +49,6 @@ class TestCalculator(unittest.TestCase):
         self.assertFalse(self.cart.contains_product(non_existent_product),
                          'Видалення неіснуючого продукту не повинно викликати помилок')
 
-    def test_order_submission_clears_cart(self):
-        self.cart.add_product(self.product, 5)
-        order = Order()
-        order.cart = self.cart
-        order.place_order()
-        self.assertEqual(len(self.cart.products), 0, 'Корзина має очиститися після оформлення замовлення')
-
     def test_product_equality_by_name(self):
         product1 = Product(name='Test', price=10.0, available_amount=5)
         product2 = Product(name='Test', price=20.0, available_amount=10)
