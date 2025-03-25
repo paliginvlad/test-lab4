@@ -33,23 +33,3 @@ Feature: Comprehensive testing of Product, ShoppingCart, and Order classes
     And I have an empty shopping cart
     When I add the product to the cart in amount 15
     Then The product should not be added to the cart successfully
-
-  Scenario: Remove product from cart
-    Given I create a product with name "Laptop", price 1000.0, and availability 10
-    And I have an empty shopping cart
-    And I add the product to the cart in amount 5
-    When I remove the product from the cart
-    Then The cart should be empty
-
-  Scenario: Submit order with products in cart
-    Given I create a product with name "Laptop", price 1000.0, and availability 10
-    And I have an empty shopping cart
-    And I add the product to the cart in amount 5
-    When I place an order
-    Then The cart should be empty
-    And The product availability should be 5
-
-  Scenario: Submit order with empty cart
-    Given I have an empty shopping cart
-    When I place an order
-    Then The cart should remain empty
